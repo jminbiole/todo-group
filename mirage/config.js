@@ -2,6 +2,7 @@ export default function() {
   this.get('/todo-groups');
   this.post('/todo-groups');
   this.get('/todo-groups/:id');
+  this.patch('/todo-groups/:id'); // or this.patch
   this.put('/todo-groups/:id'); // or this.patch
   this.del('/todo-groups/:id');
   // These comments are here to help you get started. Feel free to delete them.

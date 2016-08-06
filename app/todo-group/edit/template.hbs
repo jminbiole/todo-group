@@ -2,16 +2,16 @@
   <div class="top-nav">
     <div class="top-nav__upperLeft">
       <p class="sidebar">|||</p>
-      <h3 class="app-title">Categories</h3>
+      <h3 class="app-title">Editing {{model.title}}</h3>
     </div>
     <div class="task-lists">
       <ul class="task-lists__group">
-        <li class="task-lists__item">New Year's Resolutions</li>
-        {{!-- <li class="task-lists__item">House Chores</li> --}}
+        {{!-- <li class="task-lists__item">New Year's Resolutions</li>
+        <li class="task-lists__item">House Chores</li>
         <li class="task-lists__item">Errands</li>
         <li class="task-lists__item">Groceries</li>
         <li class="task-lists__item">Homework</li>
-        <li class="task-lists__item add-new">Add New List</li>
+        <li class="task-lists__item add-new">Add New List</li> --}}
       </ul>
 
     </div>
@@ -22,11 +22,11 @@
       <h2 class="group-title__text">Edit List</h2>
     </div>
     <div class="todo-content">
-      {{#simple-form }}
-        {{ input type=’text’ placeholder="List Name"}}
+      {{#simple-form startingValues=model onsubmit=(action "saveCategory" model) as |formValues|}}
+        {{input class="title-input" type="text" placeholder="List Item" value=formValues.title }}
     <div class="todo-content__btn-container">
-      <button class="todo-content__btn back-btn">BACK</button>
-      <button class="todo-content__btn">ACCEPT</button>
+      {{#link-to 'todo-group.index'}}<button class="back-btn">BACK</button>{{/link-to}}
+      <button type="submit" class="submit">ACCEPT</button>
     </div>
     {{/simple-form}}
         </div>
