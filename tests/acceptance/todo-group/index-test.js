@@ -14,8 +14,8 @@ test('user can see list of todo categories when visiting /todo-groups', function
     assert.equal(findWithAssert('.app-title').text().trim(),
       'Categories',
       'There is an element with a class "app-title" that says "Categories"');
-    assert.equal(findWithAssert('.task-lists__item').length, 5,
-      'There should be a "task-lists__item" for each "todo-group" record in the API.' +
+    assert.equal(findWithAssert('.task-list__item').length, 5,
+      'There should be a "task-list__item" for each "todo-group" record in the API.' +
       'To do this you should load the models from Ember Data into your template');
 
     const firstGroup = server.db.todoGroups.find(1);
@@ -63,7 +63,7 @@ test('user can navigate to the edit form from /todo-groups', function(assert) {
     assert.equal(currentURL(), '/todo-groups/3/edit',
       'Clicking on the third element with the class "edit-btn" should redirect to the URL "/todo-groups/3/edit"');
   });
-})
+});
 
 test('user can delete todo-groups when visiting /todo-groups', function(assert) {
   server.createList('todo-group', 3);
@@ -73,8 +73,8 @@ test('user can delete todo-groups when visiting /todo-groups', function(assert) 
 
 
   andThen(function() {
-    assert.equal(findWithAssert('.collection__item').length, 2,
-      'There should be one fewer "collection__item" since the todo-group should be deleted' +
+    assert.equal(findWithAssert('.task-list__item').length, 2,
+      'There should be one fewer "task-list__item" since the todo-group should be deleted' +
       'after clicking the second ".delete-btn"');
     assert.equal(server.db.todoGroups.length, 2,
       'The deleted item should also be deleted in the API!');

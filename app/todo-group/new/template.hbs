@@ -1,0 +1,36 @@
+<div class="app">
+  <div class="top-nav">
+    <div class="top-nav__upperLeft">
+      <p class="sidebar">|||</p>
+      <h3 class="app-title">Categories</h3>
+    </div>
+    <div class="task-lists">
+      <ul class="task-lists__group">
+        <li class="task-lists__item">New Year's Resolutions</li>
+        {{!-- <li class="task-lists__item">House Chores</li> --}}
+        <li class="task-lists__item">Errands</li>
+        <li class="task-lists__item">Groceries</li>
+        <li class="task-lists__item">Homework</li>
+        <li class="task-lists__item add-new">Add New List</li>
+      </ul>
+
+    </div>
+  </div>
+<div class="hero">
+  <div class="group-title">
+    <h2 class="group-title__text">Add New List</h2>
+  </div>
+  <div class="todo-content">
+    {{#simple-form }}
+      {{ input type=’text’ placeholder="List Name"}}
+  <div class="todo-content__btn-container">
+    <button class="todo-content__btn back-btn">BACK</button>
+    <button class="todo-content__btn">ACCEPT</button>
+  </div>
+  {{/simple-form}}
+      </div>
+</div>
+</div>
+
+
+{{outlet}}
