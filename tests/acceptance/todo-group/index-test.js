@@ -11,9 +11,9 @@ test('user can see list of todo categories when visiting /todo-groups', function
     assert.equal(currentURL(), '/todo-groups');
     assert.equal(currentRouteName(), 'todo-group.index');
 
-    assert.equal(findWithAssert('.app-title').text().trim(),
+    assert.equal(findWithAssert('.page-title').text().trim(),
       'Categories',
-      'There is an element with a class "app-title" that says "Categories"');
+      'There is an element with a class "page-title" that says "Categories"');
     assert.equal(findWithAssert('.task-list__item').length, 5,
       'There should be a "task-list__item" for each "todo-group" record in the API.' +
       'To do this you should load the models from Ember Data into your template');

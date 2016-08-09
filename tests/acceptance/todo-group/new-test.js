@@ -11,9 +11,9 @@ test('visiting /todo-groups/new shows a new todo-group form', function(assert) {
       'The url /todo-groups/new loads the "todo-group.new" route.');
     assert.equal(currentURL(), '/todo-groups/new',
       'The "todo-group.new" route does not redirect without user interaction');
-      assert.equal(findWithAssert('.app-title').text().trim(),
+      assert.equal(findWithAssert('.page-title').text().trim(),
         'New Category',
-        'There is an element with a class "app-title" that says "New Category"');
+        'There is an element with a class "page-title" that says "New Category"');
   });
 });
 

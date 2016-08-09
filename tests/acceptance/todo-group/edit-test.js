@@ -12,9 +12,9 @@ test('visiting /todo-groups/1/edit shows a for to edit a todo-group with id 1', 
       'The url /todo-groups/1/edit loads the "todo-group.edit" route.');
     assert.equal(currentURL(), '/todo-groups/1/edit',
       'The "todo-group.edit" route does not redirect without user interaction');
-      assert.equal(findWithAssert('.app-title').text().trim(),
+      assert.equal(findWithAssert('.page-title').text().trim(),
         `Editing ${group.title}`,
-        'There is an element with a class "app-title" that says "Editing "' +
+        'There is an element with a class "page-title" that says "Editing "' +
         ' then the current group title.' +
         'Current title is: ' + group.title);
   });
@@ -43,8 +43,8 @@ test('user can submit the form on /todo-groups/1/edit to update todo-group with 
       'After submit redirect to the "todo-group.index" route.');
     assert.equal(currentURL(), '/todo-groups', 'After submit redirect to /todo-groups');
 
-    assert.equal(findWithAssert('.task-lists__item').length, 1,
-      'There should be a "task-lists__item" for the new saved "todo-group" record in the API.');
+    assert.equal(findWithAssert('.task-list__item').length, 1,
+      'There should be a "task-list__item" for the new saved "todo-group" record in the API.');
 
     const firstGroup = server.db.todoGroups.find(1);
     assert.equal(firstGroup.title, 'Music',

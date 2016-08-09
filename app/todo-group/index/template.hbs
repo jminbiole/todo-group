@@ -1,46 +1,19 @@
-<div class="app">
-  <div class="top-nav">
-    <div class="top-nav__upperLeft">
-      <p class="sidebar">|||</p>
-      <h3 class="app-title">Categories</h3>
+<div class="container">
+  <div class="categories">
+    <div class="title-container">
+      <h2 class="page-title">Categories</h2>
+      {{#link-to "todo-group.new"}}
+      <button class="new-btn">Add New Category</button>
+      {{/link-to}}
     </div>
-    <div class="task-lists">
-      <ul class="task-lists__group">
-        {{!-- <li class="task-lists__item">New Year's Resolutions</li> --}}
-        {{!-- <li class="task-lists__item">House Chores</li> --}}
-        {{!-- <li class="task-lists__item">Errands</li> --}}
-        {{!-- <li class="task-lists__item">Groceries</li> --}}
-        {{!-- <li class="task-lists__item">Homework</li> --}}
-        {{!-- <li class="task-lists__item add-new">Add New List</li> --}}
-      </ul>
-
-    </div>
-  </div>
-  <div class="main-content">
-    <div class="container">
-      <div class="categories">
-        <div class="title-container">
-          <h2 class="todo-group">Categories</h2>
-          {{#link-to "todo-group.new"}}
-          <button class="new-btn">Add New Category</button>
-          {{/link-to}}
-        </div>
-        {{#each model as |formValue|}}
-          <div class="category-content task-list__item">
-            <p class="todo-group__title">{{ formValue.title }}</p>
-          <div class="btn-container">
-            {{#link-to "todo-group.edit" formValue}}<button class="edit-btn">Edit</button>{{/link-to}}
-            <button class="delete-btn" {{action "destroy" formValue }}>Trash</button>
-            {{!-- <i class="fa fa-trash" aria-hidden="true"></i> --}}
-          </div>
-          </div>
-        {{/each}}
+    {{#each model as |formValue|}}
+      <div class="category-content task-list__item">
+        <p class="todo-group__title">{{ formValue.title }}</p>
+      <div class="btn-container">
+        {{#link-to "todo-group.edit" formValue}}<button class="edit-btn">Edit</button>{{/link-to}}
+        <button class="delete-btn" {{action "destroy" formValue }}><i class="fa fa-trash" aria-hidden="true"></i></button>
       </div>
-    </div>
+      </div>
+    {{/each}}
   </div>
 </div>
-
-
-
-
-{{outlet}}
