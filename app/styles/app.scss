@@ -165,14 +165,25 @@ body {
 }
 .collection {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  width: 100%;
   background: #fff;
 }
 .collection__item {
+  align-items: center;
   display: flex;
-  margin: 0 1rem;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0 1rem;
+  width: 100%;
+  border-bottom: 1px solid #ddd;
 }
 .todo-item__name {
   margin: 0 1rem;
+  display: flex;
+}
+.todo-task__title {
+  margin: 0 1rem;
+  text-transform: capitalize;
 }

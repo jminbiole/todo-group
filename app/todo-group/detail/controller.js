@@ -14,6 +14,9 @@ export default Ember.Controller.extend({
       },
     destroy(formValue) {
         formValue.destroyRecord();
+    },
+    isToggled(checked) {
+
     }
-  },
+  }
 });
