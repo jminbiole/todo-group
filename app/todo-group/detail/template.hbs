@@ -7,24 +7,27 @@
       {{#each model.items as |todoItem|}}
         <div class="collection__item">
           <div class="todo-item__name">
-            {{!-- <span class="todo-item__done fa fa-check-square-o fa-square-o"></span> --}}
-            <div class="todo-item__toggle" {{ action "isToggled" checked}}></div>
-              {{#if (isToggled !== true)}}
-              <span class="fa-square-o"></span>
+            <button class="todo-item__toggle" {{ action "isToggled" todoItem on="click"}}>
+              {{#if todoItem.done}}
+                <span class="todo-item__done fa fa-check-square-o"></span>
               {{else}}
-              <span class="todo-item__done fa fa-check-square-o"></span>
+                <span class="todo-item todo-item__done fa fa-square-o"></span>
               {{/if}}
+            </button>
             <p class="todo-task__title">{{todoItem.name}}</p>
           </div>
-        <div class="btn-container">
-          <button class="delete-btn" {{action "destroy" formValue }}><i class="fa fa-trash" aria-hidden="true"></i></button>
-        </div>
+          <div class="btn-container">
+            <button class="delete-btn" data-id="{{todoItem.id}}" {{action "destroy" todoItem }}><i class="fa fa-trash" aria-hidden="true"></i></button>
+          </div>
         </div>
       {{/each}}
       <div class="collection__item">
-        {{!-- {{#simple-form class=" from" as |formValues}}
-        <label>New Todo Items</label>
-        {{/simple-form}} --}}
+        {{#simple-form class="add-todo__form" onsubmit=(action "saveItem" model) as |newItem|}}
+          {{input class="detail-input todo-item-name" type="text" placeholder="Todo Name" value=newItem.name}}
+          <div class="btn-container">
+            <button class="add-todo__btn submit" type="submit">ADD</button>
+          </div>
+        {{/simple-form}}
       </div>
     </div>
   </div>

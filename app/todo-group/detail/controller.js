@@ -2,21 +2,18 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
   actions: {
-    saveItem(formValues) {
-      this.store.createRecord('todo-item', formValues).save();
+    saveItem(todoItem, newItem, reset) {
+      const saveThis = this.store.createRecord('todo-item', newItem);
+      saveThis.set('group', todoItem);
+      saveThis.save();
+      reset();
     },
-    saveCategory(model, formValues) {
-      model.set('title', formValues.title);
-      model.save().then(() => {
-        // Redirect
-          this.transitionToRoute('todo-group.index');
-        });
-      },
-    destroy(formValue) {
-        formValue.destroyRecord();
+    destroy(todoItem) {
+        todoItem.destroyRecord();
     },
-    isToggled(checked) {
-
+    isToggled(todoItem) {
+      todoItem.toggleProperty('done');
+      todoItem.save();
     }
   }
 });

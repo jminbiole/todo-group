@@ -187,3 +187,30 @@ body {
   margin: 0 1rem;
   text-transform: capitalize;
 }
+.todo-item__done {
+  // display: none;
+}
+.add-todo__form {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.detail-input {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #ddd;
+  font-size: .9rem;
+  padding: .5rem .3rem;
+  outline: none;
+  margin-bottom: .5rem;
+}
+.btn-container {
+}
+.add-todo__btn {
+  background: #1bc327;
+  border: 1px solid #1bc327;
+  border-radius: 8%;
+  color: #fff;
+  margin: 1rem;
+  padding: .3rem;
+}

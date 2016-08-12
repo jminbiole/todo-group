@@ -67,6 +67,10 @@ test('user can see done value of todo-items on the todo-group.detail page', func
       'For each "todo-item" marked done pulled from the API, ' +
       'there should be a font-awesome span with a class "fa-check-square-o"');
 
+    assert.ok(!findWithAssert('span.todo-item__done.fa:eq(1)').hasClass('fa-square-o'),
+      'For each "todo-item" marked done pulled from the API, ' +
+      'there should not be a font-awesome span with a class "fa-square-o"');
+
     assert.ok(findWithAssert('span.todo-item__done.fa:eq(0)').hasClass('fa-square-o'),
       'For each "todo-item" not marked done pulled from the API, ' +
       'there should be a font-awesome span with a class "fa-square-o"');
@@ -96,9 +100,15 @@ test('user can change toggle "done" value of todo-items', function(assert) {
       'The last todo in the list should be changed from done to not done, ' +
       'and there should be a font-awesome span with a class "fa-square-o" to represent this');
 
+    assert.ok(!findWithAssert('span.todo-item__done.fa:last').hasClass('fa-check-square-o'),
+      'The last todo in the list should be changed from done to not done, ' +
+      'and there should be a font-awesome span without the class "fa-check-square-o" to represent this');
+
     assert.ok(findWithAssert('span.todo-item__done.fa:first').hasClass('fa-check-square-o'),
       'The last todo in the list should be changed from not done to done, ' +
       'and there should be a font-awesome span with a class "fa-check-square-o" to represent this');
+
+
 
     assert.equal(item1.done, true);
     assert.equal(item2.done, false);
