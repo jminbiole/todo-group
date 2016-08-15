@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="group-title">
+    <h2 class="page-title">Editing {{model.title}}</h2>
+  </div>
+  <div class="todo-content">
+    {{#simple-form startingValues=model onsubmit=(action "saveCategory" model) as |formValues|}}
+      {{input class="title-input" type="text" placeholder="List Item" value=formValues.title }}
+  <div class="todo-content__btn-container">
+    {{#link-to 'todo-group.index' class="back-btn"}}BACK{{/link-to}}
+    <button type="submit" class="submit">ACCEPT</button>
+  </div>
+  {{/simple-form}}
+      </div>
+</div>

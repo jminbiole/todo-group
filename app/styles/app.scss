@@ -1,0 +1,250 @@
+* {
+  box-sizing: border-box;
+  font-family: Arial;
+}
+body {
+  margin: 0;
+}
+.app {
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+.top-nav__upperLeft {
+  display: flex;
+  padding-left: 2rem;
+}
+.app-title {
+  text-decoration: none;
+  color: #fff;
+}
+.sidebar {
+  color: #ddd;
+  font-size: 1.3rem;
+  transform: rotate(90deg);
+  margin: 1rem 1rem 1rem 0;
+}
+.main-title {
+  color: #ddd;
+}
+.top-nav {
+  background: #00bdd6;
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+  box-shadow: 0px 3px 15px 10px rgba(189,189,189,1);
+}
+
+
+.nav__item {
+  text-decoration: none;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  padding: 0 2rem;
+  padding-bottom: .5rem;
+  margin-right: 1rem;
+  border-bottom: 5px solid #00bdd6;
+  text-align: center;
+
+  &:hover {
+    border-bottom: 5px solid #e6f031;
+  }
+  &__new-link {
+    min-width: 4rem;
+    width:100%;
+    padding: 0;
+  }
+}
+
+.main-content {
+  height: 100vh;
+  background: #fff;
+}
+.task-lists {
+
+  &__group {
+    display: flex;
+    list-style: none;
+    width: 100%;
+    flex-grow: 1;
+    flex-wrap: wrap;
+
+  }
+}
+.task-lists__item {
+  width: calc(100% / 4);
+  text-align: center;
+  color: #ddd;
+  text-transform: uppercase;
+  font-size: .8rem;
+  flex-grow: 1;
+}
+
+.container {
+  width: 100%;
+  max-width: 65rem;
+  min-width: 20rem;
+  margin: auto;
+}
+
+.group-title__text {
+  color: #4c4c4c;
+  padding: 2rem 0 0 0;
+  margin-bottom: 0.5rem;
+}
+.todo-content {
+  border: 1px solid #ddd;
+  padding: 1.5rem 2rem;
+  -webkit-box-shadow: 0px 7px 15px 5px rgba(189,189,189,1);
+  -moz-box-shadow: 0px 7px 15px 5px rgba(189,189,189,1);
+  box-shadow: 0px 7px 15px 5px rgba(189,189,189,1);
+}
+
+.title-input {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #ddd;
+  padding: .5rem 0;
+  font-size: .9rem;
+  outline: none;
+}
+
+.todo-content__btn-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 0;
+}
+
+.back-btn {
+  background: #fff;
+  color: #000;
+  border: none;
+  text-decoration: none;
+  font-size: 1rem;
+  outline: none;
+}
+
+.submit {
+  background: #fff;
+  color: #00bdd6;
+  border: none;
+  font-size: 1rem;
+  outline: none;
+}
+
+.categories {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border: 1px solid #00bdd6;
+  padding: 1rem;
+  background: #00bdd6;
+  box-shadow: 0px 7px 15px 5px rgba(189,189,189,1);
+  max-width: 65rem;
+  min-width: 20rem;
+  margin: 2rem auto;
+}
+.title-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding:1rem;
+  background: #fff;
+  text-transform: capitalize;
+
+}
+.category-content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  border: 1px solid #ddd;
+  padding: .5rem;
+  background: #fff;
+
+}
+.todo-group {
+  margin: 0;
+  padding-top: .5rem;
+}
+.new-btn {
+  padding: 1rem;
+  background: #ff9200;
+  border: none;
+  border-radius: 5%;
+  color: #fff;
+}
+.todo-group__title {
+  text-transform: capitalize;
+}
+
+.edit-btn {
+  padding: .5rem;
+  margin: .5rem;
+  background: #1bc327;
+  border: none;
+  border-radius: 8%;
+  color: #fff;
+}
+.delete-btn {
+  padding: .5rem 1rem;
+  margin: 1rem;
+  background: #5e0707;
+  border: none;
+  border-radius: 8%;
+  color: #fff;
+}
+.collection {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background: #fff;
+}
+.collection__item {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0 1rem;
+  width: 100%;
+  border-bottom: 1px solid #ddd;
+}
+.todo-item__name {
+  margin: 0 1rem;
+  display: flex;
+}
+.todo-task__title {
+  margin: 0 1rem;
+  text-transform: capitalize;
+}
+
+.add-todo__form {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.detail-input {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #ddd;
+  font-size: .9rem;
+  padding: .5rem .3rem;
+  outline: none;
+  margin-bottom: .5rem;
+}
+
+.add-todo__btn {
+  background: #1bc327;
+  border: 1px solid #1bc327;
+  border-radius: 8%;
+  color: #fff;
+  margin: 1rem;
+  padding: .3rem;
+}
+.todo-item__toggle {
+  border:none;
+  background: #fff;
+  outline: none;
+}

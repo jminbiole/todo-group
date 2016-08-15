@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="categories">
+    <div class="title-container">
+      <h2 class="page-title">Categories</h2>
+      {{#link-to "todo-group.new"}}
+      <button class="new-btn">Add New Category</button>
+      {{/link-to}}
+    </div>
+    {{#each model as |formValue|}}
+      <div class="category-content task-list__item">
+        <p class="todo-group__title">{{ formValue.title }}</p>
+      <div class="btn-container">
+        {{#link-to "todo-group.edit" formValue}}<button class="edit-btn">Edit</button>{{/link-to}}
+        <button class="delete-btn" {{action "destroy" formValue }}><i class="fa fa-trash" aria-hidden="true"></i></button>
+      </div>
+      </div>
+    {{/each}}
+  </div>
+</div>

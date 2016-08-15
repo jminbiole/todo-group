@@ -6,6 +6,21 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.route('todo-group', { path: '/todo-groups' }, function() {
+    this.route('new');
+    this.route('edit', { path: '/:id/edit' });
+
+    this.route('delete');
+    this.route('detail', { path: '/:id' });
+  });
 });
+
+// Router.map(function() {
+//   this.route('author', { path: '/authors' }, function() {
+//     this.route('new');
+//     this.route('detail', { path: '/:id/books' });
+//   });
+//   this.route('books');
+// });
 
 export default Router;
