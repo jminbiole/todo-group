@@ -12,12 +12,17 @@ body {
 }
 .top-nav__upperLeft {
   display: flex;
+  padding-left: 2rem;
+}
+.app-title {
+  text-decoration: none;
+  color: #fff;
 }
 .sidebar {
   color: #ddd;
   font-size: 1.3rem;
   transform: rotate(90deg);
-  margin: 1rem;
+  margin: 1rem 1rem 1rem 0;
 }
 .main-title {
   color: #ddd;
@@ -27,9 +32,29 @@ body {
   display: flex;
   flex-direction: column;
   color: #fff;
-  -webkit-box-shadow: 0px 3px 15px 10px rgba(189,189,189,1);
-  -moz-box-shadow: 0px 3px 15px 10px rgba(189,189,189,1);
   box-shadow: 0px 3px 15px 10px rgba(189,189,189,1);
+}
+
+
+.nav__item {
+  text-decoration: none;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  padding: 0 2rem;
+  padding-bottom: .5rem;
+  margin-right: 1rem;
+  border-bottom: 5px solid #00bdd6;
+  text-align: center;
+
+  &:hover {
+    border-bottom: 5px solid #e6f031;
+  }
+  &__new-link {
+    min-width: 4rem;
+    width:100%;
+    padding: 0;
+  }
 }
 
 .main-content {
@@ -42,6 +67,8 @@ body {
     display: flex;
     list-style: none;
     width: 100%;
+    flex-grow: 1;
+    flex-wrap: wrap;
 
   }
 }
@@ -51,6 +78,7 @@ body {
   color: #ddd;
   text-transform: uppercase;
   font-size: .8rem;
+  flex-grow: 1;
 }
 
 .container {
@@ -92,6 +120,7 @@ body {
   background: #fff;
   color: #000;
   border: none;
+  text-decoration: none;
   font-size: 1rem;
   outline: none;
 }
@@ -108,15 +137,18 @@ body {
   display: flex;
   flex-direction: column;
   width: 100%;
-  margin: 2rem 0;
   border: 1px solid #00bdd6;
   padding: 1rem;
   background: #00bdd6;
   box-shadow: 0px 7px 15px 5px rgba(189,189,189,1);
+  max-width: 65rem;
+  min-width: 20rem;
+  margin: 2rem auto;
 }
 .title-container {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   margin-bottom: 1rem;
   padding:1rem;
   background: #fff;
@@ -187,9 +219,7 @@ body {
   margin: 0 1rem;
   text-transform: capitalize;
 }
-.todo-item__done {
-  // display: none;
-}
+
 .add-todo__form {
   width: 100%;
   display: flex;
@@ -204,8 +234,7 @@ body {
   outline: none;
   margin-bottom: .5rem;
 }
-.btn-container {
-}
+
 .add-todo__btn {
   background: #1bc327;
   border: 1px solid #1bc327;
@@ -213,4 +242,9 @@ body {
   color: #fff;
   margin: 1rem;
   padding: .3rem;
+}
+.todo-item__toggle {
+  border:none;
+  background: #fff;
+  outline: none;
 }

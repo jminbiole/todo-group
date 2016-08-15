@@ -2,13 +2,15 @@
   <div class="top-nav">
     <div class="top-nav__upperLeft">
       <p class="sidebar">|||</p>
+      {{#link-to 'todo-group.index' class="app-title"}}
       <h3 class="app-title">Categories</h3>
+      {{/link-to}}
     </div>
     <div class="task-lists">
       <nav class="task-lists__group">
-        {{#each model as |formValue|}}
-          {{#link-to "todo-group.edit" formValue class="nav__item"}}
-            {{formValue.title}}
+        {{#each model as |group|}}
+          {{#link-to "todo-group.detail" group class="nav__item"}}
+            {{group.title}}
           {{/link-to}}
         {{/each}}
         {{#link-to "todo-group.new" class="nav__item nav__item--new-link"}}

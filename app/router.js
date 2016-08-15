@@ -11,7 +11,7 @@ Router.map(function() {
     this.route('edit', { path: '/:id/edit' });
 
     this.route('delete');
-    this.route('detail', { path: '/1' });
+    this.route('detail', { path: '/:id' });
   });
 });
 
